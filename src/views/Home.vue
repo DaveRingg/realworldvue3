@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <EventCard />
+  <div class="events">
+    <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
 
@@ -9,9 +9,78 @@
 import EventCard from "@/components/EventCard.vue";
 
 export default {
-  name: "Home",
+  name: "Events",
   components: {
     EventCard
+  },
+  data() {
+    return {
+      events: [
+        {
+          id: 5928101,
+          category: 'animal welfare',
+          title: 'Cat Adoption Day',
+          description:'Find your new feline friend at this event',
+          location: 'Meow Town',
+          date: 'January 28, 2022',
+          time: '12:00',
+          petsAllowed: true,
+          organizer: 'Kat Laydee'
+        },
+        {
+          id: 5928102,
+          category: 'animal welfare',
+          title: 'Cat Adoption Day',
+          description:'Find your new feline friend at this event',
+          location: 'Meow Town',
+          date: 'January 28, 2022',
+          time: '12:00',
+          petsAllowed: false,
+          organizer: 'Kat Laydee'
+        },
+        {
+          id: 5928103,
+          category: 'animal welfare',
+          title: 'Cat Adoption Day',
+          description:'Find your new feline friend at this event',
+          location: 'Meow Town',
+          date: 'January 28, 2022',
+          time: '12:00',
+          petsAllowed: true,
+          organizer: 'Kat Laydee'
+        },
+        {
+          id: 5928104,
+          category: 'animal welfare',
+          title: 'Cat Adoption Day',
+          description:'Find your new feline friend at this event',
+          location: 'Meow Town',
+          date: 'January 28, 2022',
+          time: '12:00',
+          petsAllowed: false,
+          organizer: 'Kat Laydee'
+        },
+        {
+          id: 5928105,
+          category: 'animal welfare',
+          title: 'Cat Adoption Day',
+          description:'Find your new feline friend at this event',
+          location: 'Meow Town',
+          date: 'January 28, 2022',
+          time: '12:00',
+          petsAllowed: true,
+          organizer: 'Kat Laydee'
+        }
+      ]
+    }
   }
 };
 </script>
+
+<style scoped>
+  .events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
